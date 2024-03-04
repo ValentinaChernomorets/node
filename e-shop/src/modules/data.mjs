@@ -7,5 +7,5 @@ const products = [
 const cart = {
     items: []
 }
-
-export default { products, cart }
+// packing
+export { products, cart }

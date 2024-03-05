@@ -1,5 +1,5 @@
 import readline from 'readline'
-import {products, cart} from './data.mjs'
+import {getProducts, cart} from './data.mjs'
 
 const io = readline.createInterface({
     input: process.stdin,
@@ -22,10 +22,12 @@ const renderMainMenu = () => {
         let option = parseInt(answer)
         switch(option) {
             case 1:
-                renderCatalog(products, (n, product, q) => {
-                    cart.items.push({ n, product, q })
-                    renderMainMenu()
-                })
+                getProducts((products)=>{
+                    renderCatalog(products, (n, product, q) => {
+                        cart.items.push({ n, product, q })
+                        renderMainMenu();
+                    });
+                });
                 break;
             case 2:
                 renderCart(cart)
@@ -61,9 +63,11 @@ const renderCart = (cart) => {
             case 3:
                 break;
             case 0:
-                renderCatalog(products, (n, product, q) => {
-                    cart.items.push({n, product, q})
-                    renderMainMenu()
+                getProducts((products)=>{
+                    renderCatalog(products, (n, product, q) => {
+                        cart.items.push({ n, product, q })
+                        renderMainMenu();
+                    });
                 });
                 break;
         }

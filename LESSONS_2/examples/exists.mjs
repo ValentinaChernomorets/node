@@ -1,19 +1,12 @@
-import {stat} from 'node:fs'
+import {stat} from 'node:fs/promises'
 
-const fileExisits = (path, cb) => {
-    stat(path, (err, stats) => {
-        if (err) {
-            console.log(err)
-        } else if (stats) {
-            cb(stats)
-        }
+const fileExisits = (path) => {
+   return stat(path)
+    .then( stats => {
+        return true
     })
-} 
+}
 
 // ----------------------------------
-fileExisits(
-    './LESSONS_2/examples/data.txt',
-    stats => {
-        console.log("file exists!")
-    }
-)
+fileExisits('./LESSONS_2/examples/data.txt')
+    .then(exists => console.console.log(exists))

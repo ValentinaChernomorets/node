@@ -6,6 +6,5 @@ const fileExisits = async (path) => {
 }
 
 // ----------------------------------
-
 const exists = await fileExisits('./LESSONS_2/examples/data.txt')
 console.log(exists)

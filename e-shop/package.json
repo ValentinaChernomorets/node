@@ -1,0 +1,15 @@
+{
+  "name": "e-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chernomorets V.",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^14.22.0",
+    "twig": "^1.17.1"
+  }
+}

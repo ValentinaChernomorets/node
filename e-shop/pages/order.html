@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product order</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Product</h1>
+    <h2>{{ product.name }}</h2>
+    <form action="???" method="???">
+        <label for="">
+            yor name <input type="text" placeholder="Full Name" name="fullName"> 
+        </label>
+        <label for="">
+            yor email <input type="text" placeholder="email@address.ex" name="emailAddress"> 
+        </label>
+        <label for="">
+            yor phone <input type="text" placeholder="phone number" name="phoneNumber"> 
+        </label>
+        <button>PAY</button>
+        <!-- HW3: add a checkbox "i agree with terms"
+            check if it is checked - server side
+        -->
+        <div>
+            <input type="checkbox" id="termCheckbox" name="term">
+            <label for="termCheckbox">I agree with terms</label>
+        </div>
+    </form>
+</body>
+</html>

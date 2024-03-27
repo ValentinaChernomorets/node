@@ -17,16 +17,17 @@ const getProducts = async () => {
     return products
 }
 
+const getProductById = async id => (await getProducts()).find(product => product.id === id);
+
 const saveCart = async (cart) => {
     await writeFile("./storage/cart.json", JSON.stringify(cart, null, 2));
     return true;
 }
 
-// HW1: make a function called - getCart which using promisse will load the cart at the begining
 const getCart = async () => {
     let data = await readFile("./storage/cart.json")
     let cart = JSON.parse(data.toString())
     return cart
 }
 
-export { getProducts, saveCart, getCart }
+export { getProducts, saveCart, getCart, getProductById}

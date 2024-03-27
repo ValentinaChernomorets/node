@@ -1,6 +1,10 @@
-import { readFile } from 'node:fs/promises'
-
-const loadTemplate = async (name) => {
-    return readFile(`pages/${name}`)
+import Twig from 'twig'
+const render = async (template, data) => {
+    return new Promise ((resolve, reject) => {
+        Twig.renderFile(template, data, (err, html) => {
+            if (err) reject(err)
+            resolve(html)
+        });
+    })
 }
-export {loadTemplate}
+export {render}
